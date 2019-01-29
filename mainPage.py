@@ -6,8 +6,10 @@ Created on Tue Jan 29 10:04:34 2019
 """
 from cosineSimilarity import cosine_similar
 from movieAPI import movie
+from wiki_movie_plots_read import movieDB
 
 title = str(input("Enter the movie name "))
 moviePlot, movieGenre = movie(title)
+movie_detail = movieDB(moviePlot)
 
-cosine_similar(moviePlot, 'the movie is based on this')
+
