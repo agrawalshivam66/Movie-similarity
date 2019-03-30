@@ -5,8 +5,16 @@ Created on Tue Jan 29 09:22:28 2019
 @author: Shivam-PC
 """
 import math
+import string
 
 def cosine_similar(s1, s2):
+    s1=s1.lower()
+    s2=s2.lower()
+    s1=s1.translate(str.maketrans("","",string.punctuation))
+    s2=s2.translate(str.maketrans("","",string.punctuation))
+    
+    s1=s1[:len(s2)]
+
     word1 = s1.split()
     word2 = s2.split()
     
@@ -40,9 +48,5 @@ def cosine_similar(s1, s2):
     return cosine_value     
 
 
-s1 = 'the game of a life is a game of everlasting learning'
-s2 = 'the unexamined life is not worth living'
 
-cosine_value = cosine_similar(s1, s2)
-print(cosine_value)
 
